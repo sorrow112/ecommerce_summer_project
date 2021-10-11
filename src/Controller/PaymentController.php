@@ -144,7 +144,7 @@ class PaymentController extends AbstractController
             $entityManager->flush();
             $session->set('panier', []);
             $panierWithData = $this->getPanier($request ,$session, $produitRepository);
-            return $this->render('main/index.html.twig', [
+            return $this->render('main/success.html.twig', [
                 'user' => $this->getUser(),
                 'categories' => $categories,
                 'souscats' => $souscat,

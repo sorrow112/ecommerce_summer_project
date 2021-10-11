@@ -1,4 +1,5 @@
 {% extends "base.html.twig" %}
+{% block title %}{{product.nom}}{% endblock %}
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="/css/panierstyle.css">
@@ -38,8 +39,8 @@
               <div class="m-bot15"> <strong>Prix : </strong><span class="pro-price"> {{product.prix}} TND</span></div>
               <br>
               <p>
-                  <button class="btn btn-round btn-danger" type="button"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
-              </p>
+                  <a href="{{ path('cart_add', {'id': product.id}) }}"><button class="btn btn-round btn-danger" type="button"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button></a>
+              </p><
           </div>
       </div>
   </section>
