@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/css/panierstyle.css">
+
+{% if items | length > 0 %}
+    <table class="table panier">
+        <thead class="thead-dark">
+        <tr>
+            <th>produit</th>
+            <th>prix</th>
+            <th >quantité</th>
+            <th>total</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+        {% if item.product == null %}
+        {% else %}
+        
+            <tr>
+                <td>{{ item.product.nom }}</td>
+                <td>{{ item.product.prix }}</td>
+                <td>{{ item.quantity }}   <a href="{{ path('cart_add', {'id': item.product.id}) }}" ><i class="fas fa-plus-square"></i></a></td>
+                <td>{{ item.product.prix * item.quantity }}</td>
+                <td>
+                    <a href="{{ path('cart_remove', {'id': item.product.id}) }}"  class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+
+                </td>
+            </tr>
+{% endif %}
+        {% endfor %}
+            <tr>
+            <td></td>
+            <td></td>
+                <td>total:</td>
+                <td>{{ total }}</td>
+            </tr>
+        </tbody>
+        <tr>
+            <td></td>
+            <td></td>
+                <td><a href="{{ path('submitpanel') }}" class="btn btn-dark" >soumettre</a></td>
+                <td></td>
+            </tr>
+            
+    </table>
+
+{% endif %}
+

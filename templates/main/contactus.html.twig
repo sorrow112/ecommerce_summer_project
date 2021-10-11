@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    {{ form_start(messageForm) }}
+    <br>
+    <div class="form-group">{{ form_label(messageForm.email) }}
+        <div class="form-control" style="width: 30%">{{ form_widget(messageForm.email) }}</div></div>
+    
+    <br>
+    <div class="form-group">{{ form_label(messageForm.text) }}
+        <div class="form-control" style="width: 30%">{{ form_widget(messageForm.text) }}</div></div>
+    
+    <br>
+    <button type="submit" class="btn btn-dark"> Soumettre</button>
+    {{ form_end(messageForm) }}
+{% endblock %}

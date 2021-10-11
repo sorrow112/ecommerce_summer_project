@@ -1,0 +1,50 @@
+
+{% block stylesheets %}
+<link rel="stylesheet" href="/css/footerstyle.css">
+{% endblock %}
+    
+  <!-- End -->
+
+
+  <!-- Footer -->
+  
+  <footer class="bg-white">
+    <br><br><br>
+    <div class="container">
+
+      <div class="row py-4">
+        <div class="col-md-6">
+        <img src="img/logo.png" alt="" width="180" class="mb-3">
+          <p class="font-italic text-muted">vous pouvez nous contacter par :<br>Telephone: XXXXXXXXX<br>Email: exemple@gmail.com<br>Facebook: notre page</p>
+        </div>
+      
+      <div class="col-md-5">
+        <p>nos routes</p>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+              <a class="nav-link" href={{path("root")}}>Acceuil <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href={{path("aboutus")}}>A propos de nous</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href={{path("contact")}}>nous contacter</a>
+          </li>
+          {% if user =='' %}
+              <li class="nav-item">
+                  <a class="nav-link" href={{path("app_login")}}>Se connecter<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href={{path("app_register")}}>Creer un compte</a>
+              </li>
+          {% else%}
+              <li class="nav-item">
+                  <a class="nav-link" href="/admin">Mon compte<span class="sr-only">(current)</span></a>
+              </li>
+
+          {% endif %}
+          </ul>
+      </div>
+      </div>
+    </div>
+  </footer>

@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    {{ form_start(paymentForm) }}
+    <br>
+    <div class="form-group">{{ form_label(paymentForm.nom) }}
+        <div class="form-control" style="width: 33%;">{{ form_widget(paymentForm.nom) }}</div></div>
+    
+    <br>
+    <div class="form-group">{{ form_label(paymentForm.prenom) }}
+        <div class="form-control" style="width: 33%;">{{ form_widget(paymentForm.prenom) }}</div></div>
+    
+    <br>
+    <div class="form-group">{{ form_label(paymentForm.numeroDeCarte) }}
+<div class="form-control" style="width: 33%;">{{ form_widget(paymentForm.numeroDeCarte) }}</div></div>
+    
+    <br>
+    <div class="form-group">{{ form_label(paymentForm.CodeDeVerification) }}
+        <div class="form-control" style="width: 33%;">{{ form_widget(paymentForm.CodeDeVerification) }}</div></div>
+    
+    <br>
+    <div class="form-group">{{ form_label(paymentForm.dateExpiration) }}
+        <div class="form-control" style="width: 33%;">{{ form_widget(paymentForm.dateExpiration) }}</div></div>
+    
+    <br>
+    <button type="submit" class="btn btn-dark"> Soumettre</button>
+    {{ form_end(paymentForm) }}
+
+{% endblock %}
