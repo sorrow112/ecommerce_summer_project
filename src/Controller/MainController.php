@@ -51,38 +51,38 @@ class MainController extends AbstractController
         return $produit;
     }
 
-    /** 
-    * @Route("/user", name="user")
-    */
-    public function user(Request $request,SessionInterface $session ,ProduitRepository $produitRepository): Response{
-        $souscat = $this->getSousCat();
-        $categories = $this->getCategory();
-        $panierWithData = $this->getPanier($request ,$session, $produitRepository);
-        $produits = $session->get('panier',[]);
+    // /** 
+    // * @Route("/user", name="user")
+    // */
+    // public function user(Request $request,SessionInterface $session ,ProduitRepository $produitRepository): Response{
+    //     $souscat = $this->getSousCat();
+    //     $categories = $this->getCategory();
+    //     $panierWithData = $this->getPanier($request ,$session, $produitRepository);
+    //     $produits = $session->get('panier',[]);
 
 
-        $userID = $this->getUser()->getId();
-        $repository = $this->getDoctrine()->getRepository(PanierAchat::class);
-        $paniers = $repository->findPanier($userID);
-        $repositoryC = $this->getDoctrine()->getRepository(Commande::class);
-        $commandes = [];
-        $repositoryP =$this->getDoctrine()->getRepository(Payement::class);
-        $payements = [];
-        for ($i = 0; $i < count($paniers); $i++) { 
+    //     $userID = $this->getUser()->getId();
+    //     $repository = $this->getDoctrine()->getRepository(PanierAchat::class);
+    //     $paniers = $repository->findPanier($userID);
+    //     $repositoryC = $this->getDoctrine()->getRepository(Commande::class);
+    //     $commandes = [];
+    //     $repositoryP =$this->getDoctrine()->getRepository(Payement::class);
+    //     $payements = [];
+    //     for ($i = 0; $i < count($paniers); $i++) { 
 
-            $commandes[$j] = findCommandes($paniers[$j]->getId());
-        }
+    //         $commandes[$j] = findCommandes($paniers[$j]->getId());
+    //     }
 
 
-        return $this->render('main/index.html.twig', [
-            'user' => $this->getUser(),
-            'categories' => $categories,
-            'souscats' => $souscat,
-            'cat' => $souscat[1],
-            'items' => $panierWithData,
-            'total' => $produits["total"]
-        ]);
-    }
+    //     return $this->render('main/index.html.twig', [
+    //         'user' => $this->getUser(),
+    //         'categories' => $categories,
+    //         'souscats' => $souscat,
+    //         'cat' => $souscat[1],
+    //         'items' => $panierWithData,
+    //         'total' => $produits["total"]
+    //     ]);
+    // }
 
     /** 
     * @Route("/contactus", name="contact")
@@ -135,7 +135,7 @@ class MainController extends AbstractController
                 'user' => $this->getUser(),
                 'categories' => $categories,
                 'souscats' => $souscat,
-                'cat' => $souscat[1],
+                // 'cat' => $souscat[1],
                 'items' => $panierWithData,
                 'total' => $produits["total"]
             ]);
@@ -163,7 +163,7 @@ class MainController extends AbstractController
                 'docs' => $docs,
                 'categories' => $categories,
                 'souscats' => $souscat,
-                'cat' => $souscat[1],
+                // 'cat' => $souscat[1],
                 'items' => $panierWithData,
                 'total' => $produits["total"],
                 'product' => $product

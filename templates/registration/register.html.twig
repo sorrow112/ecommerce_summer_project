@@ -26,19 +26,19 @@
 <br><br>
     {{ form_start(registrationForm) }}
     
-    <div class="form-group">{{ form_label(registrationForm.fullname) }}
+    <div class="form-group">nom complet
         <div class="form-control ">{{ form_widget(registrationForm.fullname) }}</div></div>
     
     <br>
-    <div class="form-group">{{ form_label(registrationForm.username) }}
+    <div class="form-group">nom d'utilisateur
         <div class="form-control">{{ form_widget(registrationForm.username) }}</div></div>
     
     <br>
-    <div class="form-group">{{ form_label(registrationForm.birthdate) }}
+    <div class="form-group">date de naissance
         <div class="form-control">{{ form_widget(registrationForm.birthdate) }}</div></div>
     
     <br>
-    <div class="form-group">{{ form_label(registrationForm.telephone) }}
+    <div class="form-group">téléphone
         <div class="form-control">{{ form_widget(registrationForm.telephone) }}</div></div>
     
     <br>
@@ -46,7 +46,7 @@
         <div class="form-control">{{ form_widget(registrationForm.email) }}</div></div>
     
     <br>
-    <div class="form-group">{{ form_label(registrationForm.plainPassword) }}
+    <div class="form-group">mot de passe
         <div class="form-control">{{ form_widget(registrationForm.plainPassword, {
             label: 'Password'
         }) }}</div></div>
@@ -72,7 +72,7 @@
         <div class="form-control">{{ form_widget(registrationForm.zipcode) }}</div></div>
     
     <br>
-    <div class="form-group">{{ form_label(registrationForm.numero_de_residance) }}
+    <div class="form-group">numero de residance
         <div class="form-control">{{ form_widget(registrationForm.numero_de_residance) }}</div></div>
         <br>
     <div class="form-group"><label for="registration_form_agreeTerms">Aceepter les conditions</label>
