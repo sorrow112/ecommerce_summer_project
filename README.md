@@ -26,16 +26,18 @@ An e-commerce web application based on symfony (a php framework) that covers all
 
 ##how to use
 
-you need to have symfony and composer installed in your machine to run this project
+you need to have symfony, composer and a mysql server installed in your machine to run this project
 
 symfony: https://symfony.com/download
 
 composer: https://getcomposer.org/download/
 
+xampp for the mysql server (you can use an alternative): https://www.apachefriends.org/
+
 once you have these two you should clone the project:
 
 ```bash
-git clone https://github.com/sorrow112/ecommerce_summer_project.git
+git clone https://github.com/sorrow112/marketplace_d-encheres_frontend.git
 ```
 
 then you move into the folder where you have the project on your console and install the dependecies then run the project
@@ -44,9 +46,10 @@ then you move into the folder where you have the project on your console and ins
 composer install
 symfony server:start
 ```
+make sure to run the database server as well and to configure the connection to it in your .env file
 
 if something didn't work properly you can consult the symfony documentation for a step by step guide : https://symfony.com/doc/current/index.html
 
-##contact me
+## contact me
 
 via email: jguirimahmed112@gmail.com
